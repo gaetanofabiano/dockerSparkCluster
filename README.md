@@ -1,5 +1,5 @@
 
-# Apache Spark cluster on docker
+# spark cluster on docker
 
 A `linux:stretch` based [Spark](http://spark.apache.org) container. 
 Use it in a standalone cluster with the accompanying `docker-compose.yml`.
