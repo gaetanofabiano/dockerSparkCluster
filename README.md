@@ -70,6 +70,8 @@ Create a folder in the master node:
 Copy the jar with dependencies in the folder
 
     docker cp my-jar-with-dependencies.jar 59d5d229a103:/usr/spark-2.4.3/jobs  
+    
+Or copy the file into the folder /data of the cluster
 
 To run the java job, go into the master node
 
