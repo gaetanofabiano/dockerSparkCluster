@@ -38,9 +38,9 @@ To copy a file on the master node use
 
     docker cp <LOCAL_FILE_NAME> <MASTER_CONTAINER_ID>:<REMOTE_MASTER_FOLDER>
 
-For example to copy a file named sparkJob.jar in the folder /usr/spark-2.4.3/bin where the container id is 59d5d229a103
+For example to copy a file named sparkJob.jar in the folder /usr/spark-2.4.1/bin where the container id is 59d5d229a103
 
-    docker cp sparkJob.jar 59d5d229a103:/usr/spark-2.4.3/bin
+    docker cp sparkJob.jar 59d5d229a103:/usr/spark-2.4.1/bin
 
 To run `pyspark`, exec into a container:
 
@@ -69,7 +69,7 @@ Create a folder in the master node:
 
 Copy the jar with dependencies in the folder
 
-    docker cp my-jar-with-dependencies.jar 59d5d229a103:/usr/spark-2.4.3/jobs  
+    docker cp my-jar-with-dependencies.jar 59d5d229a103:/usr/spark-2.4.1/jobs  
     
 Or copy the file into the folder /data of the cluster
 
