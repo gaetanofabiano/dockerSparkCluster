@@ -1,5 +1,5 @@
 master:
-  image: spark:latest
+  image: gaetanofabiano/spark
   command: bin/spark-class org.apache.spark.deploy.master.Master -h master
   hostname: master
   environment:
@@ -24,7 +24,7 @@ master:
     - ./data:/tmp/data
 
 worker1:
-  image: spark:latest
+  image: gaetanofabiano/spark
   command: bin/spark-class org.apache.spark.deploy.worker.Worker spark://master:7077
   hostname: worker1
   environment:
@@ -49,7 +49,7 @@ worker1:
     - ./data1:/tmp/data
 
 worker2:
-  image: spark:latest
+  image: gaetanofabiano/spark
   command: bin/spark-class org.apache.spark.deploy.worker.Worker spark://master:7077
   hostname: worker2
   environment:
