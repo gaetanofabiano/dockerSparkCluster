@@ -1,4 +1,3 @@
-[![Twitter]](https://twitter.com/gaetanofabiano)
 # Spark docker
 # spark cluster on docker
 
