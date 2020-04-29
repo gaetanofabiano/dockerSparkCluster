@@ -1,12 +1,22 @@
-
+[![Twitter](https://img.shields.io/twitter/follow/BigData_Europe.svg?style=social)](https://twitter.com/gaetanofabiano)
+# Spark docker
 # spark cluster on docker
 
-A `linux:stretch` based [Spark](http://spark.apache.org) container. 
+A `debian:stretch` based [Spark](http://spark.apache.org) container. 
 Use it in a standalone cluster with the accompanying `docker-compose.yml`.
 
 This project is not aimed to be considered an enviorments for production products. 
 
-IT is for study and demo purpose only
+It is for study and demo purpose only
+
+## Currently supported versions:
+* Spark 3.0.0-preview for Hadoop 2.7+ with OpenJDK 8
+* Spark 2.4.1 for Hadoop 2.7+ with OpenJDK 8
+
+## Docker Repository
+
+[gaetanofabiano/spark](https://hub.docker.com/r/gaetanofabiano/spark)
+
 
 ## docker-compose example
 
@@ -38,9 +48,9 @@ To copy a file on the master node use
 
     docker cp <LOCAL_FILE_NAME> <MASTER_CONTAINER_ID>:<REMOTE_MASTER_FOLDER>
 
-For example to copy a file named sparkJob.jar in the folder /usr/spark-2.4.1/bin where the container id is 59d5d229a103
+For example to copy a file named sparkJob.jar in the folder /usr/spark-3.0.0-preview/bin where the container id is 59d5d229a103
 
-    docker cp sparkJob.jar 59d5d229a103:/usr/spark-2.4.1/bin
+    docker cp sparkJob.jar 59d5d229a103:/usr/spark-3.0.0-preview/bin
 
 To run `pyspark`, exec into a container:
 
@@ -69,7 +79,7 @@ Create a folder in the master node:
 
 Copy the jar with dependencies in the folder
 
-    docker cp my-jar-with-dependencies.jar 59d5d229a103:/usr/spark-2.4.1/jobs  
+    docker cp my-jar-with-dependencies.jar 59d5d229a103:/usr/spark-3.0.0-preview/jobs  
     
 Or copy the file into the folder /data of the cluster
 
