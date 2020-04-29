@@ -1,4 +1,4 @@
-[![Twitter](https://img.shields.io/twitter/follow/BigData_Europe.svg?style=social)](https://twitter.com/gaetanofabiano)
+[[Twitter](https://img.shields.io/twitter/follow/BigData_Europe.svg?style=social)](https://twitter.com/gaetanofabiano)
 # Spark docker
 # spark cluster on docker
 
