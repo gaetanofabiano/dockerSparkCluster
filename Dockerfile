@@ -63,14 +63,14 @@ RUN curl -sL --retry 3 \
 # SPARK
 RUN apt-get install wget;
 ENV SPARK_VERSION spark-3.0.0-preview
-ENV SPARK_PACKAGE spark-3.0.0-preview-bin-without-hadoop.tgz
+ENV SPARK_PACKAGE ${SPARK_VERSION}-preview-bin-without-hadoop.tgz
 ENV SPARK_HOME /usr/spark-${SPARK_VERSION}
 ENV SPARK_DIST_CLASSPATH="$HADOOP_HOME/etc/hadoop/*:$HADOOP_HOME/share/hadoop/common/lib/*:$HADOOP_HOME/share/hadoop/common/*:$HADOOP_HOME/share/hadoop/hdfs/*:$HADOOP_HOME/share/hadoop/hdfs/lib/*:$HADOOP_HOME/share/hadoop/hdfs/*:$HADOOP_HOME/share/hadoop/yarn/lib/*:$HADOOP_HOME/share/hadoop/yarn/*:$HADOOP_HOME/share/hadoop/mapreduce/lib/*:$HADOOP_HOME/share/hadoop/mapreduce/*:$HADOOP_HOME/share/hadoop/tools/lib/*"
 ENV PATH $PATH:${SPARK_HOME}/bin
-RUN wget "https://archive.apache.org/dist/spark/$SPARK_VERSION/$SPARK_VERSION-bin-without-hadoop.tgz";
-RUN tar -xvf $SPARK_VERSION-bin-without-hadoop.tgz -C /usr/ \
- && mv /usr/$SPARK_VERSION-preview-bin-without-hadoop $SPARK_HOME \
- && chown -R root:root $SPARK_HOME;
+RUN wget "https://archive.apache.org/dist/spark/$SPARK_VERSION/$SPARK_PACKAGE";
+RUN tar -xvf ${SPARK_PACKAGE} -C /usr/ \
+ && mv /usr/${SPARK_PACKAGE} ${SPARK_HOME} \
+ && chown -R root:root ${SPARK_HOME};
 
-WORKDIR $SPARK_HOME
+WORKDIR ${SPARK_HOME}
 CMD ["bin/spark-class", "org.apache.spark.deploy.master.Master"]
